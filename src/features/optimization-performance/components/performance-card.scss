@@ -1,0 +1,42 @@
+.performance-card {
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+  align-content: start;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__head-text {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 950;
+    color: #111827;
+    letter-spacing: 0.1px;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: rgba(17, 24, 39, 0.6);
+    line-height: 1.35;
+  }
+
+  &__body {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+  }
+}

@@ -1,0 +1,10 @@
+.box {
+  font-family: system-ui, sans-serif;
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

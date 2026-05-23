@@ -1,0 +1,21 @@
+.performance-comparison-line-chart {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 280px;
+  }
+
+  &__note {
+    font-size: 12px;
+    opacity: 0.75;
+    line-height: 1.4;
+  }
+}

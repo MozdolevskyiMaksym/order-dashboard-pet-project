@@ -1,0 +1,149 @@
+.expensive-filter-demo {
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__hint {
+    font-size: 13px;
+    color: rgba(17, 24, 39, 0.6);
+    line-height: 1.4;
+  }
+
+  &__btn {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease,
+      background 120ms ease;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    &--primary {
+      background: #111827;
+      color: #ffffff;
+
+      &:hover {
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  &__input {
+    height: 40px;
+    min-width: 220px;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 14px;
+    background: #ffffff;
+
+    &:focus {
+      border-color: rgba(59, 130, 246, 0.55);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    }
+  }
+
+  &__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 10px;
+
+    @media (max-width: 920px) {
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+  }
+
+  &__metric {
+    border: 1px solid #eef0f2;
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: #fbfbfc;
+    display: grid;
+    gap: 4px;
+  }
+
+  &__metric-label {
+    font-size: 12px;
+    color: rgba(17, 24, 39, 0.6);
+  }
+
+  &__metric-value {
+    font-size: 14px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: #111827;
+  }
+
+  &__panel {
+    border: 1px solid #eef0f2;
+    border-radius: 16px;
+    padding: 12px;
+    background: #ffffff;
+    display: grid;
+    gap: 10px;
+  }
+
+  &__panel-title {
+    font-size: 13px;
+    font-weight: 900;
+    color: #111827;
+  }
+
+  &__results {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__row-item {
+    height: 34px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid #eef0f2;
+    background: #fafafa;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+
+  &__kbd {
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background: #111827;
+    color: #ffffff;
+    min-width: 70px;
+    text-align: right;
+  }
+}

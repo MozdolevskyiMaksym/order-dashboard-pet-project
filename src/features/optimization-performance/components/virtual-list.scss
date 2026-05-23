@@ -1,0 +1,22 @@
+.virtual-list {
+  overflow: auto;
+  position: relative;
+
+  &__spacer {
+    position: relative;
+    height: var(--vl-total-h);
+  }
+
+  &__window {
+    position: absolute;
+    top: var(--vl-offset-top);
+    left: 0;
+    right: 0;
+  }
+
+  &__row {
+    height: var(--vl-row-h);
+    display: flex;
+    align-items: center;
+  }
+}

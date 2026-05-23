@@ -1,0 +1,165 @@
+.concurrency-page {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  font-size: 18px;
+  line-height: 1.45;
+  background: #fafafa;
+  min-height: 100%;
+
+  &__header {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__title {
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: -0.6px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+  }
+
+  &__summary-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__summary {
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  &__summary-label {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  &__summary-value {
+    font-weight: 900;
+  }
+
+  &__summary-sep {
+    opacity: 0.7;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 14px;
+
+    &--two {
+      grid-template-columns: repeat(2, minmax(320px, 1fr));
+    }
+  }
+}
+
+.concurrency-btn {
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: transparent;
+  color: #111;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+
+  &--primary {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+  }
+
+  &--ghost {
+    background: transparent;
+  }
+}
+
+.concurrency-log {
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 16px;
+  background: #0b0b0b;
+  color: #f5f5f5;
+
+  &__header {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  &__meta {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  &__empty {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  &__list {
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 86px 10px 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  &__time {
+    opacity: 0.7;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    margin-top: 4px;
+    background: #60a5fa;
+
+    &--ok {
+      background: #22c55e;
+    }
+
+    &--warn {
+      background: #fb7185;
+    }
+
+    &--info {
+      background: #60a5fa;
+    }
+  }
+
+  &__text {
+    white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 860px) {
+  .concurrency-page__grid--two {
+    grid-template-columns: 1fr;
+  }
+}

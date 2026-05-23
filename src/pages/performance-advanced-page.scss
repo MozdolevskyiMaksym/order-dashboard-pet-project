@@ -1,0 +1,276 @@
+.performance-advanced-page {
+  display: grid;
+  gap: 16px;
+
+  &__header {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.45;
+    max-width: 900px;
+  }
+
+  &__runbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__runbtn {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  &__runhint {
+    font-size: 13px;
+    opacity: 0.75;
+  }
+
+  &__card {
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+    background: #fff;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    &-title {
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+
+    &-meta {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    &-row {
+      display: grid;
+      gap: 12px;
+
+      &--2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &-field {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    &-label {
+      font-size: 12px;
+      opacity: 0.75;
+      font-weight: 700;
+    }
+
+    &-input {
+      max-width: 550px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #d7d7d7;
+      background: #fff;
+      font-size: 14px;
+      outline: none;
+
+      &:focus {
+        border-color: #111;
+        box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+      }
+    }
+
+    &-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    &-chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 13px;
+
+      &:hover {
+        border-color: #111;
+      }
+
+      &--active {
+        border-color: #111;
+        background: #111;
+        color: #fff;
+      }
+    }
+
+    &-section {
+      display: grid;
+      gap: 10px;
+    }
+
+    &-section-title {
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    &-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    &-option {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #eee;
+      background: #fafafa;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      padding-top: 4px;
+    }
+
+    &-btn {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+
+      &--ghost {
+        background: #fff;
+        color: #111;
+      }
+    }
+
+    &-hint {
+      font-size: 12px;
+      opacity: 0.75;
+      line-height: 1.45;
+    }
+  }
+
+  &-metrics {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-metric {
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 12px;
+    display: grid;
+    gap: 6px;
+    background: #fff;
+
+    &__label {
+      font-size: 12px;
+      opacity: 0.75;
+      font-weight: 800;
+    }
+
+    &__value {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+
+    &__sub {
+      font-size: 12px;
+      opacity: 0.75;
+    }
+  }
+
+  &-summary {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+
+    &__item {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+  }
+
+  &-alert {
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 12px;
+    font-size: 13px;
+
+    &--error {
+      border-color: #f2a2a2;
+      background: #fff5f5;
+    }
+  }
+
+  @media (max-width: 860px) {
+    &-card__row--2 {
+      grid-template-columns: 1fr;
+    }
+
+    &-card__actions {
+      justify-content: flex-start;
+    }
+
+    &-metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+.meta-programming-page {
+  display: grid;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+
+  &__header {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.45;
+  }
+
+  &__card {
+    border: 1px solid #e7e7e7;
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+    background: #ffffff;
+  }
+
+  &__card-head {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__accordion-header {
+    all: unset;
+    display: grid;
+    gap: 6px;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 2px;
+    }
+  }
+
+  &__card-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__accordion-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: transform 0.25s cubic-bezier(0.4, 0.2, 0.2, 1);
+    color: #666;
+    font-size: 14px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  &__accordion-arrow--open {
+    transform: rotate(90deg);
+  }
+
+  &__card-subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.45;
+  }
+
+  &__status-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__status-label {
+    font-weight: 700;
+  }
+
+  &__status-option {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__status-text {
+    font-size: 15px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__button {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+  }
+
+  &__button--primary {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+
+    &:hover {
+      background: #000;
+    }
+  }
+
+  &__button--ghost {
+    background: transparent;
+  }
+
+  &__result {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__result-title {
+    font-weight: 800;
+  }
+
+  &__result-pre,
+  &__code-pre {
+    margin: 0;
+    padding: 12px;
+    border-radius: 12px;
+    background: #0b0b0b;
+    color: #f5f5f5;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  &__result-pre {
+    min-height: 120px;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__control-label {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  &__control-input {
+    width: 120px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    transition: 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #111;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__tip {
+    font-size: 13px;
+    opacity: 0.75;
+  }
+
+  &__note {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__note-title {
+    font-weight: 800;
+  }
+
+  &__note-body {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.45;
+    display: grid;
+    gap: 6px;
+  }
+
+  &__note-hint {
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  &__log {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__log-empty {
+    font-size: 14px;
+    opacity: 0.75;
+  }
+
+  &__log-list {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__log-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  &__log-time {
+    opacity: 0.7;
+  }
+
+  &__log-text {
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  &__log-footer {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+}

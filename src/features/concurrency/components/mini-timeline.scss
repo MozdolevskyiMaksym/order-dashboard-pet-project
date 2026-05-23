@@ -1,0 +1,71 @@
+.concurrency-timeline {
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+  display: grid;
+  gap: 12px;
+
+  &__header {
+    display: grid;
+    gap: 4px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    opacity: 0.8;
+    line-height: 1.45;
+  }
+
+  &__lines {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__line {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__line-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  &__line-label {
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  &__line-note {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  &__bar {
+    height: 12px;
+    border-radius: 999px;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    overflow: hidden;
+  }
+
+  &__bar-fill {
+    height: 100%;
+    width: var(--bar-width, 0%);
+    background: var(--bar-color, #a1a1aa);
+  }
+
+  &__end {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+}

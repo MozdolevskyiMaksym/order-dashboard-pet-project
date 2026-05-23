@@ -1,0 +1,46 @@
+.concurrency-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__heading {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.82;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__hint {
+    font-size: 13px;
+    opacity: 0.75;
+    align-self: center;
+  }
+}

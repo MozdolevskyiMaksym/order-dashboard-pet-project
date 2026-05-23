@@ -1,0 +1,136 @@
+.virtual-list-demo {
+  display: grid;
+  gap: 12px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__hint {
+    font-size: 13px;
+    color: rgba(17, 24, 39, 0.6);
+  }
+
+  &__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  &__metric {
+    border: 1px solid #eef0f2;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 10px 12px;
+    display: grid;
+    gap: 4px;
+  }
+
+  &__metric-label {
+    font-size: 12px;
+    color: rgba(17, 24, 39, 0.6);
+  }
+
+  &__metric-value {
+    font-size: 14px;
+    font-weight: 900;
+    color: #111827;
+  }
+
+  &__btn {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-weight: 800;
+    font-size: 13px;
+    background: #ffffff;
+    color: #111827;
+    cursor: pointer;
+    transition:
+      transform 120ms ease,
+      background 120ms ease,
+      border-color 120ms ease;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    &--primary {
+      background: #111827;
+      border-color: #111827;
+      color: #ffffff;
+
+      &:hover {
+        background: #0b1220;
+      }
+    }
+  }
+
+  &__input {
+    height: 38px;
+    min-width: 140px;
+    padding: 0 12px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+    background: #ffffff;
+
+    &:focus {
+      border-color: #c7cdd6;
+    }
+  }
+
+  &__list {
+    border: 1px solid #eef0f2;
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: auto;
+    max-height: 420px;
+    padding: 10px;
+  }
+
+  &__naive-row {
+    height: 34px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__row-item {
+    height: 34px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 10px;
+    border-radius: 12px;
+    border: 1px solid #f1f3f5;
+    background: #ffffff;
+  }
+
+  &__kbd {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 12px;
+    font-weight: 900;
+    color: #111827;
+    white-space: nowrap;
+  }
+}

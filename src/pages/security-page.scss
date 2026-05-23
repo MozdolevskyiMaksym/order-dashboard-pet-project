@@ -1,0 +1,183 @@
+/* src/pages/security.scss */
+.security-page {
+  display: grid;
+  gap: 16px;
+
+  &__header {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.82;
+    line-height: 1.55;
+    max-width: 920px;
+  }
+
+  &__panel {
+    border: 1px solid #e7e7e7;
+    border-radius: 16px;
+    padding: 18px;
+    background: #fff;
+
+    display: grid;
+    gap: 14px;
+  }
+
+  &__toggle {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 12px;
+
+    border: 1px solid #eee;
+    background: #fafafa;
+    border-radius: 14px;
+  }
+
+  &__toggle input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
+
+  &__toggle-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  &__token {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__token-label {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+
+  &__token-input {
+    max-width: 1150px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #d7d7d7;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: #111;
+      box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+    }
+  }
+
+  &__token-tip {
+    font-size: 13px;
+    opacity: 0.75;
+    line-height: 1.45;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__actions button {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  /* Щоб друга кнопка (protected) виглядала "вторинною", але в тому ж стилі */
+  &__actions button + button {
+    border-color: #d7d7d7;
+    background: #fff;
+    color: #111;
+  }
+
+  &__response-title {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  &__loading {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  &__error {
+    border: 1px solid #f2a2a2;
+    background: #fff6f6;
+    border-radius: 14px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  &__result {
+    margin: 0;
+    padding: 14px;
+    border-radius: 14px;
+    background: #0b0b0b;
+    color: #f5f5f5;
+
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  &__empty {
+    font-size: 14px;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 860px) {
+    &__panel {
+      padding: 14px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__toggle {
+      padding: 10px 10px;
+    }
+
+    &__actions {
+      gap: 8px;
+    }
+
+    &__actions button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__actions button + button {
+      width: 100%;
+    }
+  }
+}

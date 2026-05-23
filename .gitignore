@@ -1,0 +1,8 @@
+pet-project/
+  .gitignore
+  package.json
+  src/
+  server/
+  webpack/
+node_modules/
+dist/
