@@ -7,24 +7,26 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
+} from "recharts";
 
-import type { OrdersStatusChartPoint } from '../types';
+import type { OrdersStatusChartPoint } from "../types";
 
 type OrdersByStatusChartProps = Readonly<{
   data: ReadonlyArray<OrdersStatusChartPoint>;
 }>;
 
 const STATUS_COLORS = [
-  '#2563eb',
-  '#16a34a',
-  '#f97316',
-  '#dc2626',
-  '#7c3aed',
-  '#0891b2',
+  "#2563eb",
+  "#16a34a",
+  "#f97316",
+  "#dc2626",
+  "#7c3aed",
+  "#0891b2",
 ];
 
-export default function OrdersByStatusChart({ data }: OrdersByStatusChartProps) {
+export default function OrdersByStatusChart({
+  data,
+}: OrdersByStatusChartProps) {
   return (
     <div className="analytics-page__card">
       <div className="analytics-page__card-title">Orders by status</div>

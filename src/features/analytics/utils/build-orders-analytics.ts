@@ -1,11 +1,11 @@
-import type { Order } from '@/shared/types/order';
-import { STATUS_LABELS } from '@/features/orders/constants';
+import type { Order } from "@/shared/types/order";
+import { STATUS_LABELS } from "@/features/orders/constants";
 
 import type {
   OrdersAnalytics,
   OrdersCityChartPoint,
   OrdersStatusChartPoint,
-} from '../types';
+} from "../types";
 
 export function buildOrdersAnalytics(
   orders: ReadonlyArray<Order>,
@@ -65,7 +65,7 @@ export function buildOrdersAnalytics(
   );
 
   const topCity =
-    [...byCity].sort((a, b) => b.count - a.count)[0]?.city ?? 'N/A';
+    [...byCity].sort((a, b) => b.count - a.count)[0]?.city ?? "N/A";
 
   return {
     totalOrders: orders.length,

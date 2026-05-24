@@ -1,13 +1,16 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 
-import { formatMoney } from '@/shared/utils';
-import { generateOrdersDataset } from '@/features/performance/utils/generate-orders-dataset';
-import { buildOrdersAnalytics } from '@/features/analytics/utils';
+import { formatMoney } from "@/shared/utils";
+import { generateOrdersDataset } from "@/features/performance/utils/generate-orders-dataset";
+import { buildOrdersAnalytics } from "@/features/analytics/utils";
 
+import {
+  OrdersByCityChart,
+  OrdersByStatusChart,
+  OrdersMap,
+} from "@/features/analytics/components";
 
-import { OrdersByCityChart, OrdersByStatusChart, OrdersMap } from '@/features/analytics/components';
-
-import './analytics-page.scss';
+import "./analytics-page.scss";
 
 const ORDERS_DATASET_SIZE = 50000;
 

@@ -1,19 +1,19 @@
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import L from 'leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import L from "leaflet";
 
-import { formatMoney } from '@/shared/utils';
+import { formatMoney } from "@/shared/utils";
 
-import type { OrdersCityChartPoint } from '../types';
+import type { OrdersCityChartPoint } from "../types";
 
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 
 delete L.Icon.Default.prototype.options.iconUrl;
 
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
-    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
 type OrdersMapProps = Readonly<{
@@ -38,10 +38,7 @@ export default function OrdersMap({ data }: OrdersMapProps) {
           />
 
           {data.map((cityData) => (
-            <Marker
-              key={cityData.city}
-              position={[cityData.lat, cityData.lng]}
-            >
+            <Marker key={cityData.city} position={[cityData.lat, cityData.lng]}>
               <Popup>
                 <div className="analytics-page__popup">
                   <strong>{cityData.city}</strong>

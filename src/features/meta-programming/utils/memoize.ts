@@ -15,7 +15,7 @@ export default function memoize<TArgs extends ReadonlyArray<unknown>, TResult>(
 
   // Використовуємо Map для зберігання кешу, оскільки він зберігає порядок вставки,
   // що дозволяє реалізувати LRU (Least Recently Used) механізм видалення старих записів
-  const cache = new Map<string, TResult>(); 
+  const cache = new Map<string, TResult>();
 
   let hits = 0; // Лічильник попадань у кеш (коли результат для даних аргументів вже є в кеші)
   let misses = 0; // Лічильник промахів кеша (коли результат для даних аргументів відсутній в кеші і функція fn повинна бути викликана для обчислення результату)

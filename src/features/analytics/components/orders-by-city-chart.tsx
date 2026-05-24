@@ -7,26 +7,26 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
+} from "recharts";
 
-import { formatMoney } from '@/shared/utils';
+import { formatMoney } from "@/shared/utils";
 
-import type { OrdersCityChartPoint } from '../types';
+import type { OrdersCityChartPoint } from "../types";
 
 type OrdersByCityChartProps = Readonly<{
   data: ReadonlyArray<OrdersCityChartPoint>;
 }>;
 
 const CITY_COLORS = [
-  '#0ea5e9',
-  '#22c55e',
-  '#f59e0b',
-  '#ef4444',
-  '#8b5cf6',
-  '#14b8a6',
-  '#ec4899',
-  '#84cc16',
-  '#f97316',
+  "#0ea5e9",
+  "#22c55e",
+  "#f59e0b",
+  "#ef4444",
+  "#8b5cf6",
+  "#14b8a6",
+  "#ec4899",
+  "#84cc16",
+  "#f97316",
 ];
 
 export default function OrdersByCityChart({ data }: OrdersByCityChartProps) {
@@ -43,7 +43,7 @@ export default function OrdersByCityChart({ data }: OrdersByCityChartProps) {
             <Tooltip
               formatter={(value) => [
                 `$${formatMoney(Number(value))}`,
-                'Total amount',
+                "Total amount",
               ]}
             />
             <Bar dataKey="totalAmount" name="Total amount">
