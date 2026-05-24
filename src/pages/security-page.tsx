@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { apiClient, HttpError } from "@/api/http";
+
 import "./security-page.scss";
 
 type PublicResponse = Readonly<{

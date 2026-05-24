@@ -1,3 +1,5 @@
+import { buildApiUrl } from "./config";
+
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
 
 type RequestOptions<TBody> = {
@@ -66,7 +68,7 @@ export const apiClient = {
       headers.Authorization = `Bearer ${options.token}`;
     }
 
-    return http<TResponse>(url, { method: "GET", headers });
+    return http<TResponse>(buildApiUrl(url), { method: "GET", headers });
   },
 
   post<TResponse, TBody>(
@@ -82,7 +84,11 @@ export const apiClient = {
       headers.Authorization = `Bearer ${options.token}`;
     }
 
-    return http<TResponse, TBody>(url, { method: "POST", body, headers });
+    return http<TResponse, TBody>(buildApiUrl(url), {
+      method: "POST",
+      body,
+      headers,
+    });
   },
 };
 
