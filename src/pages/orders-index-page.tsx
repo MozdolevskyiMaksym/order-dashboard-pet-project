@@ -28,16 +28,6 @@ type ResultRow = Readonly<{
   city: string;
 }>;
 
-function toRows(orders: ReadonlyArray<Order>): ReadonlyArray<ResultRow> {
-  return orders.map(({ id, createdAt, status, amount, city }) => ({
-    id,
-    createdAtDay: formatIsoToDay(createdAt),
-    status,
-    amount,
-    city,
-  }));
-}
-
 export default function OrdersIndexPage() {
   const [orders, setOrders] = useState<ReadonlyArray<Order>>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -101,27 +91,30 @@ export default function OrdersIndexPage() {
     // Замір робимо в memo, щоб не “шуміти” на кожен рендер
     const runs = 50;
 
-    let t0 = performance.now();
+    const t0 = performance.now();
     for (let i = 0; i < runs; i += 1) {
       index.query({
         statuses: statuses.length > 0 ? statuses : undefined,
       });
     }
-    let t1 = performance.now();
+    const t1 = performance.now();
 
-    let t2 = performance.now();
+    const t2 = performance.now();
+    let plainResultSize = 0;
     for (let i = 0; i < runs; i += 1) {
       if (statuses.length === 0) {
-        void orders;
+        plainResultSize += orders.length;
       } else {
-        void orders.filter((o) => statuses.includes(o.status));
+        plainResultSize += orders.filter(({ status }) =>
+          statuses.includes(status),
+        ).length;
       }
     }
-    let t3 = performance.now();
+    const t3 = performance.now();
 
     return {
       indexMs: (t1 - t0) / runs,
-      plainMs: (t3 - t2) / runs,
+      plainMs: (t3 - t2) / runs + plainResultSize * 0,
     };
   }, [index, orders, statuses]);
 
@@ -142,8 +135,8 @@ export default function OrdersIndexPage() {
 
   const mismatch = useMemo(() => {
     // Перевірка коректності: результати мають збігатися (за множиною id)
-    const a = new Set(indexFiltered.map((o) => o.id));
-    const b = new Set(plainFiltered.map((o) => o.id));
+    const a = new Set(indexFiltered.map(({ id }) => id));
+    const b = new Set(plainFiltered.map(({ id }) => id));
 
     if (a.size !== b.size) {
       return true;
@@ -386,4 +379,14 @@ export default function OrdersIndexPage() {
       </div>
     </div>
   );
+}
+
+function toRows(orders: ReadonlyArray<Order>): ReadonlyArray<ResultRow> {
+  return orders.map(({ id, createdAt, status, amount, city }) => ({
+    id,
+    createdAtDay: formatIsoToDay(createdAt),
+    status,
+    amount,
+    city,
+  }));
 }
