@@ -11,6 +11,7 @@ import {
   toggleInList,
   formatIsoToDay,
 } from "@/shared/utils";
+
 import "./orders-index-page.scss";
 
 const DEFAULT_STATUSES: ReadonlyArray<OrderStatus> = ["new", "processing"];
