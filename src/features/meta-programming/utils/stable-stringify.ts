@@ -37,7 +37,7 @@ export default function stableStringify(value: unknown): string {
 
     // Для типу symbol повертаємо рядкове представлення з префіксом, щоб відрізнити його від звичайних рядків
     if (t === "function") {
-      return `__function__:${(value as Function).name || "anonymous"}`;
+      return `__function__:${(value as { name?: string }).name || "anonymous"}`;
     }
 
     // Для типу symbol повертаємо рядкове представлення з префіксом, щоб відрізнити його від звичайних рядків

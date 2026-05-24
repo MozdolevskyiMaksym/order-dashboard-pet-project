@@ -64,7 +64,6 @@ class AnalyzerPlugin extends BundleAnalyzerPlugin {
     // Ми підʼєднуємось до хуку beforeRun — момент перед стартом збірки
     // Виводимо лог, щоб у CI/терміналі одразу було видно, який режим використовується
     compiler.hooks.beforeRun.tap("AnalyzerPlugin", () => {
-      // eslint-disable-next-line no-console
       console.log(`[AnalyzerPlugin] mode="${this._mode}"`);
     });
 
