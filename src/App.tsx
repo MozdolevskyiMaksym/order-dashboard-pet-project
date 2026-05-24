@@ -39,7 +39,7 @@ export function App() {
   return (
     <div className="app">
       <header className="app__header">
-        <div className="app__title">Orders Admin</div>
+        <div className="app__title">Orders Admin 2</div>
 
         <nav className="app__nav">
           {NAV_ITEMS.map(({ to, label }) => (
