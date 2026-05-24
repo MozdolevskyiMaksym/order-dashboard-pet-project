@@ -6,3 +6,8 @@ pet-project/
   webpack/
 node_modules/
 dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
