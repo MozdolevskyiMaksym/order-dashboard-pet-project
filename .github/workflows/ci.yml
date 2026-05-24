@@ -1,12 +1,14 @@
-name: Build
+name: CI
 
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
-  build:
+  quality-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (production)
+      - name: Lint
+        run: npm run lint
+
+      - name: Build production
         run: npm run build
 
       - name: Show build meta in logs
