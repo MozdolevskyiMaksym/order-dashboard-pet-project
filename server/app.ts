@@ -4,6 +4,11 @@ import { registerHealthRoutes } from "./routes/health.routes";
 import { registerOrdersRoutes } from "./routes/orders.routes";
 import { registerSecurityRoutes } from "./routes/security.routes";
 
+const allowedOrigins = new Set([
+  "http://localhost:3000",
+  "https://order-dashboard-pet-project.vercel.app",
+]);
+
 // По суті App - це сервер
 export function createApp() {
   const app = express(); // Створює екземпляр веб-сервера. Створюється HTTP-додаток, який може обробляти запити,
@@ -22,15 +27,30 @@ export function createApp() {
 
   // CORS middleware дозволяє браузеру виконувати запити до цього бекенда з іншого origin
   // (наприклад, коли frontend і backend працюють на різних хостах або портах).
-  //
+
   // У development я використовую dev-proxy (3000 -> 4000), тому CORS фактично не спрацьовує,
   // але він залишається корисним для:
   // - прямого тестування бекенда без proxy - тобто якщо ми відкриємо http://localhost:4000 і спробуємо зробити запит з консолі браузера,
   // CORS дозволить це зробити. Або просто напярму зробимо фетч - production-сценарію, де frontend і backend можуть бути на різних доменах
+  // app.use(
+  //   cors({
+  //     origin: true, // дозволяє запити з будь-якого origin (відповідає конкретним origin, що прийшов)
+  //     credentials: true, // дозволяє передавати “credentials”: cookies, authorization, client certificates
+  //   }),
+  // );
+
   app.use(
     cors({
-      origin: true, // дозволяє запити з будь-якого origin (відповідає конкретним origin, що прийшов)
-      credentials: true, // дозволяє передавати “credentials”: cookies, authorization, client certificates
+      origin(origin, callback) {
+        // Якщо origin відсутній (наприклад, при запитах з Postman або curl) або він є в списку дозволених, то дозволяємо запит
+        if (!origin || allowedOrigins.has(origin)) {
+          callback(null, true);
+          return;
+        }
+        // Інакше відхиляємо запит з помилкою CORS
+        callback(new Error("Not allowed by CORS"));
+      },
+      credentials: true,
     }),
   );
 
